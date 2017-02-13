@@ -15,4 +15,13 @@ describe "user signs in to their account" do
       expect(page).to have_content("#{user.first_name} #{user.last_name}'s Links")
     end
   end
+  context "unauthenticated user tries to visit links index" do
+    it "redirects them to the login page with an option to sign up" do
+      visit root_path
+
+      expect(current_path).to eq(login_path)
+      expect(page).to have_content("Log In or Sign Up")
+    end
+  end
+
 end
