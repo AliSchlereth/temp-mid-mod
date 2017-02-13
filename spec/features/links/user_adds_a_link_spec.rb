@@ -27,7 +27,7 @@ describe "user adds a link" do
       fill_in "link[url]", with: "google"
       click_button "Add Link"
 
-      expect(page).to have_content('')
+      expect(page).to have_content('Url is not a valid URL')
     end
   end
 end
