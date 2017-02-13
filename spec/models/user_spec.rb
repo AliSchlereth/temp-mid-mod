@@ -27,8 +27,15 @@ RSpec.describe User, type: :model do
 
       expect(user).to be_valid
     end
+  end
 
+  context "relationships" do
+    it "responds to links" do
+      user = User.create(first_name: "a", last_name: "s", email: "a@email.com", password: "password", password_confirmation: "password")
+      link = Link.create(title: "title", url: "http://google.com", read: false)
 
+      expect(user).to respond_to(:links)
+    end
   end
 
 end
