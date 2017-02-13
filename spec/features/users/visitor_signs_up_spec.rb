@@ -17,4 +17,17 @@ describe "a visitor signs up as a user" do
       expect(current_path).to eq(links_path)
     end
   end
+
+  context "visitor tries to visit links index" do
+    it "redirects them to the login page with an option to sign up" do
+      visit root_path
+
+      expect(current_path).to eq(login_path)
+      expect(page).to have_content("Log In or Sign Up")
+
+      click_on "Sign Up"
+
+      expect(current_path).to eq(new_user_path) 
+    end
+  end
 end
