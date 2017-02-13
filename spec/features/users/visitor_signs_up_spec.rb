@@ -14,6 +14,7 @@ describe "a visitor signs up as a user" do
       click_on "Create Account"
 
       expect(page).to have_content("A S's Links")
+      expect(current_path).to eq(links_path)
     end
   end
 end

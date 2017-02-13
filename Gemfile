@@ -21,7 +21,7 @@ gem 'unicorn'
 # gem 'capistrano-rails', group: :development
 group :development do
   gem 'web-console', '~> 2.0'
-  gem 'better_errors'
+
 end
 
 group :development, :test do
@@ -33,7 +33,6 @@ group :development, :test do
   gem 'simplecov', :require => false
   gem 'spring'
   gem 'database_cleaner'
-  gem 'better_errors'
   gem 'factory_girl_rails'
   gem 'shoulda-matchers'
   gem 'poltergeist'
