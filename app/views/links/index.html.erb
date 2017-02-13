@@ -12,6 +12,8 @@
   </div><hr/>
   <% current_user.links.each do |link| %>
   <div class="row">
-    <div class="col-md-2"><%= link.title %></div> <div class="col-md-4"><%= link.url %></div> <div class="col-md-2"><%= link_to "Mark as Read", "" %></div>
+    <div class="col-md-2"><%= link.title %></div>
+    <div class="col-md-4"><%= link.url %></div>
+    <div class="col-md-2"><%= link_to "Mark as Read", "", class="link read-status" %></div>
   </div>
   <% end  %>
