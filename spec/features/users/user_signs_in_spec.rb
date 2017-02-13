@@ -9,7 +9,7 @@ describe "user signs in to their account" do
 
       fill_in "email", with: "#{user.email}"
       fill_in "password", with: "password"
-      click_on "Sign In"
+      click_button "Sign In"
 
       expect(current_path).to eq(links_path)
       expect(page).to have_content("#{user.first_name} #{user.last_name}'s Links")
