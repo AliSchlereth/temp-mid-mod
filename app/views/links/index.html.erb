@@ -1,1 +1,8 @@
 <h2><%= current_user.first_name %> <%= current_user.last_name %>'s Links</h2>
+<%= form_for @link do |f| %>
+  <%= f.label :title %>
+  <%= f.text_field :title %>
+  <%= f.label :url %>
+  <%= f.text_field :url %>
+  <%= f.submit "Add Link" %>
+<% end  %>
