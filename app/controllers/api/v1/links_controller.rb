@@ -10,10 +10,6 @@ class Api::V1::LinksController < ApplicationController
   end
 
   private
-    def true?(obj)
-      obj.to_s == "true"
-    end
-
     def link_params
       params.permit(:read)
     end
