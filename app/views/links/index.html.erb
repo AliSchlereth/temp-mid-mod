@@ -7,6 +7,11 @@
   <%= f.submit "Add Link" %>
 <% end  %>
 
-<%= current_user.links.each do |link| %>
-  <%= link.title %> <%= link.url %> <%= link_to "Mark as Read", "" %>
-<% end  %>
+  <div class="row">
+    <div class="col-md-2">Title </div><div class="col-md-4">URL</div><div class="col-md-2">Status</div>
+  </div><hr/>
+  <% current_user.links.each do |link| %>
+  <div class="row">
+    <div class="col-md-2"><%= link.title %></div> <div class="col-md-4"><%= link.url %></div> <div class="col-md-2"><%= link_to "Mark as Read", "" %></div>
+  </div>
+  <% end  %>

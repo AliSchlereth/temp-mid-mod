@@ -14,7 +14,7 @@ class LinksController < ApplicationController
     if link.save
       flash[:success] = "#{link.url} saved as #{link.title}"
     else
-      flash[:alert] = link.errors.full_messages
+      flash[:danger] = link.errors.full_messages[0]
     end
     redirect_to links_path
   end

@@ -16,5 +16,18 @@ describe "user adds a link" do
       expect(page).to have_content("https://google.com")
       expect(page).to have_link("Mark as Read")
     end
+
+    it "returns a flash error message with invalid url" do
+      user = User.create(first_name: "a", last_name: "s", email: "a@email.com", password: "password", password_confirmation: "password")
+      allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user)
+
+      visit links_path
+
+      fill_in "link[title]", with: "title"
+      fill_in "link[url]", with: "google"
+      click_button "Add Link"
+
+      expect(page).to have_content('')
+    end
   end
 end
