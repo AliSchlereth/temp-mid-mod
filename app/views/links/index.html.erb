@@ -6,3 +6,7 @@
   <%= f.text_field :url %>
   <%= f.submit "Add Link" %>
 <% end  %>
+
+<%= current_user.links.each do |link| %>
+  <%= link.title %> <%= link.url %> <%= link_to "Mark as Read", "" %>
+<% end  %>
