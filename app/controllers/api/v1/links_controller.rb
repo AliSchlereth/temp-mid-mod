@@ -10,8 +10,7 @@ class Api::V1::LinksController < ApplicationController
   end
 
   private
-
-  def link_params
-    params.permit(:read)
-  end
+    def link_params
+      params.permit(:read)
+    end
 end
