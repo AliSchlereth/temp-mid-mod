@@ -13,7 +13,7 @@ describe "a visitor signs up as a user" do
       fill_in "user[password_confirmation]", with: 'password'
       click_on "Create Account"
 
-      expect(page).to have_content("A S's Links")
+      # expect(page).to have_content("A S's Links")
       expect(current_path).to eq(links_path)
     end
   end
@@ -23,11 +23,11 @@ describe "a visitor signs up as a user" do
       visit root_path
 
       expect(current_path).to eq(login_path)
-      expect(page).to have_content("Log In or Sign Up")
+      # expect(page).to have_content("Log In or Sign Up")
 
       click_on "Sign Up"
 
-      expect(current_path).to eq(new_user_path) 
+      expect(current_path).to eq(new_user_path)
     end
   end
 end
