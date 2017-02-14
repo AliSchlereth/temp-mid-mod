@@ -15,9 +15,12 @@
   <div class="row">
     <div class="col-md-2"><%= link.title %></div>
     <div class="col-md-4 URL"><%= link.url %></div>
-    <div class="col-md-2 read-status"> <%= link.read %></div>
+    <div class="col-md-2 link read-status"> <%= link.read %></div>
     <% if link.read == false %>
       <div class="col-md-2"><a href="" class="link mark-as-read" id="link-<%= link.id %>">Mark as Read</a></div>
+    <% end %>
+    <% if link.id %>
+      <div class="col-md-2"> <%= link_to "Edit", edit_link_path(link) %></div>
     <% end %>
   </div>
   <% end  %>
